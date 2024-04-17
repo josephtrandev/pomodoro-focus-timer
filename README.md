@@ -2,8 +2,8 @@
 
 ## [Live Demo](https://josephtrandev.github.io/pomodoro-focus-timer/)
 
-This Pomodoro Focus Timer is an attempt to simplify the time tracking when using the Pomodoro Technique. 
-It will enable users to spend more time focusing on their task instead of having to worry about tracking their time and breaks.
+This Pomodoro Focus Timer is a tool developed to optimize the time tracking process when using the Pomodoro Technique. 
+It will enable users to spend more time focusing on their task instead of worrying about their time and breaks.
 
 ***
 
