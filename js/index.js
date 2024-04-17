@@ -1,4 +1,4 @@
-let mins = 0;
+let mins = 25;
 let secs = mins * 60;
 minutes = document.getElementById("minutes");
 seconds = document.getElementById("seconds");  
@@ -13,14 +13,7 @@ function Decrement() {
         else {
             minutes.value = getMinutes();
             seconds.value = getSeconds();
-        }
-
-        // Timer Display
-        if (mins < 10) {
-            minutes.value = '0' + mins;
-        }
-        if (secs < 10) {
-            seconds.value = '0' + secs;
+            formatTime();
         }
 
         if (mins < 1) {
@@ -34,17 +27,14 @@ function Decrement() {
         
         if (mins < 0) {
             alert('time up');
-            minutes.value = '0' + 0;
-            seconds.value = '0' + 0;
-            timerRunning = false;
+            minutes.value = 0;
+            seconds.value = 0;
+            formatTime();
         }
         else {
-            if (timerRunning === true) {
-                secs--;
-                setTimeout('Decrement()', 1000);
-            }
-            else {
-                return;
+            secs--;
+            if (timerRunning) {
+                timer = setTimeout('Decrement()', 1000);
             }
         }
     }
@@ -70,47 +60,38 @@ function getSeconds() {
     return secs - Math.round(mins * 60);
 }
 
+function formatTime() {
+    if(minutes.value < 10) {
+        minutes.value = '0' + minutes.value.slice(-2);
+    }
+    if(seconds.value < 10) {
+        seconds.value = '0' + seconds.value.slice(-2);
+    }
+}
+
 function setPomodoro() {
     stopCountdown();
-    mins = 25;
+    mins = 25;      // Eventually allow user to set time
+    minutes.value = mins;
     secs = mins * 60;
-
-    if (mins < 10) {
-        minutes.value = '0' + mins;
-    }
-    else {
-        minutes.value = mins;
-    }
-
-    seconds.value = '0' + 0;
+    seconds.value = 0;
+    formatTime();    
 }
 
 function setShortBreak() {
     stopCountdown();
-    mins = 5;
+    mins = 5;      // Eventually allow user to set time
+    minutes.value = mins;
     secs = mins * 60;
-
-    if (mins < 10) {
-        minutes.value = '0' + mins;
-    }
-    else {
-        minutes.value = mins;
-    }
-
-    seconds.value = '0' + 0;
+    seconds.value = 0;
+    formatTime();
 }
 
 function setLongBreak() {
     stopCountdown();
-    mins = 30;
+    mins = 30;      // Eventually allow user to set time
+    minutes.value = mins;
     secs = mins * 60;
-
-    if (mins < 10) {
-        minutes.value = '0' + mins;
-    }
-    else {
-        minutes.value = mins;
-    }
-
-    seconds.value = '0' + 0;
+    seconds.value = 0;
+    formatTime();
 }
