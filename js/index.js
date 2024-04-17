@@ -3,9 +3,9 @@ let secs = mins * 60;
 minutes = document.getElementById("minutes");
 seconds = document.getElementById("seconds");  
 let timerRunning = false;
+let alarm = new Audio('/sound/basic-alarm.mp3');
 
 function Decrement() {
-    var timer;
     if (document.getElementById) {
         if (seconds < 59) {
             seconds.value = secs;
@@ -26,10 +26,13 @@ function Decrement() {
         }
         
         if (mins < 0) {
-            alert('time up');
+            alarm.play();
             minutes.value = 0;
             seconds.value = 0;
             formatTime();
+            alert('time up');
+            alarm.pause();
+            alarm.load();
         }
         else {
             secs--;
