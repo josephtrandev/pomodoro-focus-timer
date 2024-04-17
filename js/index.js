@@ -3,7 +3,7 @@ let secs = mins * 60;
 minutes = document.getElementById("minutes");
 seconds = document.getElementById("seconds");  
 let timerRunning = false;
-let alarm = new Audio('/sound/basic-alarm.mp3');
+let alarm = new Audio('sound/basic-alarm.mp3');
 
 function Decrement() {
     if (document.getElementById) {
