@@ -12,28 +12,41 @@
   
   <body>
     <main>
-        <h1>Pomodoro Timer</h1>
-        <button onclick="setPomodoro()">Pomodoro</button>
-        <button onclick="setShortBreak()">Short Break</button>
-        <button onclick="setLongBreak()">Long Break</button>
-        <div>Time Left ::</div>
-        <div>
-            <input id="minutes"
-                  type="text"
-                  style="width: 2%; justify-content: right; border: none; font-size: 16px;
-                          font-weight: bold; color: black;"
-                  value="25">
-            <font size="5">
-                :
-            </font>
-            <input id="seconds"
-                  type="text"
-                  style="width: 2%; border: none; font-size: 16px;
-                          font-weight: bold; color: black;"
-                  value="00">
+      <h1 class="container">Pomodoro Timer</h1>
+        
+        <div class="container">
+          <button onclick="setPomodoro()" class="animated-button" style="margin-right: 24px;">
+            <span class="text">Pomodoro</span>
+            <span class="circle"></span>
+          </button>
+          <button onclick="setShortBreak()" class="animated-button">
+            <span class="text">Short Break</span>
+            <span class="circle"></span>
+          </button>
+          <button onclick="setLongBreak()" class="animated-button" style="margin-left: 24px;">
+            <span class="text">Long Break</span>
+            <span class="circle"></span>
+          </button>
         </div>
-        <button onclick="startCountdown()">Start timer</button>
-        <button onclick="stopCountdown()">Stop timer</button>
+
+        <div class="container">Time Left :</div>
+        <div class="time-container">
+          <div id="minutes" style="font-size: x-large;">25</div>
+          <p style="font-size: x-large;"><b>  :  </b></p>
+          <div id="seconds" style="font-size: x-large;">00</div>
+        </div>
+        
+        
+        <div class="container">
+          <button onclick="startCountdown()" class="animated-button start">
+            <span class="text">Start Timer</span>
+            <span class="circle"></span>
+          </button>
+          <button onclick="stopCountdown()" class="animated-button stop" style="margin-left: 24px;">
+            <span class="text">Stop Timer</span>
+            <span class="circle"></span>
+          </button>
+        </div>
     </main>
 	<script src="js/index.js"></script>
   </body>
