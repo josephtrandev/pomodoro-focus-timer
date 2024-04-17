@@ -6,7 +6,6 @@ let timerRunning = false;
 let alarm = new Audio('/sound/basic-alarm.mp3');
 
 function Decrement() {
-    var timer;
     if (document.getElementById) {
         if (seconds < 59) {
             seconds.value = secs;
