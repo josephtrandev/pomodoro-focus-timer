@@ -1,4 +1,4 @@
-let mins = 0;
+let mins = 25;
 let secs = mins * 60;
 minutes = document.getElementById("minutes");
 seconds = document.getElementById("seconds");  
