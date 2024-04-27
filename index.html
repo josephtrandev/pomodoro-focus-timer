@@ -18,7 +18,7 @@
       </div>
         
         <div class="container">
-          <button onclick="setPomodoro()" id="set-pomodoro" class="animated-button btnActive" style="margin-right: 24px;">
+          <button onclick="setPomodoro()" id="set-pomodoro" class="animated-button btnActive noHover" style="margin-right: 24px;">
             <span class="text">Pomodoro</span>
             <span class="circle"></span>
           </button>
@@ -36,18 +36,18 @@
         <div class="time-container">
           <div>
             <input id="minutes" type="text" value="25" style="color: white;">
-            <span style="font-size: 60px; font-weight: bold; color: white;">:</span>
+            <span style="font-size: 120px; font-weight: bold; color: white;">:</span>
             <input id="seconds" type="text" value="00" style="color: white;">
           </div>
         </div>
         
         <div class="container">
-          <button onclick="startCountdown()" class="animated-button start">
+          <button onclick="startCountdown()" class="animated-button start" id="startButton">
             <span class="text">Start Timer</span>
             <span class="circle"></span>
           </button>
-          <button onclick="stopCountdown()" class="animated-button stop" style="margin-left: 24px;">
-            <span class="text">Stop Timer</span>
+          <button onclick="stopCountdown()" class="animated-button stop noHover" id="stopButton" style="margin-left: 24px; opacity:0.5;">
+            <span class="text">Pause Timer</span>
             <span class="circle"></span>
           </button>
         </div>

@@ -3,6 +3,12 @@ let totalTime = 1500; // value in seconds, default of 1500 is 25 minutes
 const minutes = document.getElementById("minutes");
 const seconds = document.getElementById("seconds");
 
+const startButton = document.getElementById("startButton");
+const stopButton = document.getElementById("stopButton");
+const pomoButton = document.getElementById("set-pomodoro")
+const shortButton = document.getElementById("set-short")
+const longButton = document.getElementById("set-long")
+
 let timerRunning = false;
 let alarm = new Audio('./sound/basic-alarm.mp3');
 
@@ -50,12 +56,25 @@ function startCountdown() {
     if(timerRunning === false) {
         clock();
     }
+
+    startButton.classList.add("noHover");
+    startButton.style.opacity = 0.5;
+
+    stopButton.classList.remove("noHover");
+    stopButton.style.opacity = 1;
     
     timerRunning = true;
 }
 
 function stopCountdown() {
     clearInterval(myTimer);
+
+    startButton.classList.remove("noHover");
+    startButton.style.opacity = 1;
+
+    stopButton.classList.add("noHover");
+    stopButton.style.opacity = 0.5;
+
     timerRunning = false;
 }
 
@@ -70,6 +89,12 @@ function formatTime() {
 
 function setPomodoro() {
     stopCountdown();
+
+    pomoButton.classList.add("btnActive", "noHover");
+    shortButton.classList.remove("btnActive", "noHover");
+    longButton.classList.remove("btnActive", "noHover");
+    minutes.style.color = "white";
+    seconds.style.color = "white";
     
     totalTime = 1500;      // 25 min, Eventually allow user to set time
     minutes.value = 25;
@@ -80,6 +105,12 @@ function setPomodoro() {
 function setShortBreak() {
     stopCountdown();
 
+    shortButton.classList.add("btnActive", "noHover");
+    pomoButton.classList.remove("btnActive", "noHover");
+    longButton.classList.remove("btnActive", "noHover");
+    minutes.style.color = "white";
+    seconds.style.color = "white";
+
     totalTime = 300;      // 5 min, Eventually allow user to set time
     minutes.value = 5;
     seconds.value = 0;
@@ -88,6 +119,12 @@ function setShortBreak() {
 
 function setLongBreak() {
     stopCountdown();
+
+    longButton.classList.add("btnActive", "noHover");
+    pomoButton.classList.remove("btnActive", "noHover");
+    shortButton.classList.remove("btnActive", "noHover");
+    minutes.style.color = "white";
+    seconds.style.color = "white";
 
     totalTime = 1800;      // 30 min, Eventually allow user to set time
     minutes.value = 30;
