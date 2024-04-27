@@ -6,35 +6,38 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Pomodoro Timer | Productivity App</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="icon" href="./favicon.ico?" type="image/x-icon" />
     <link rel="shortcut icon" href="./favicon.ico?" type="image/x-icon" />
   </head>
   
   <body>
     <main>
-      <h1 class="container">Pomodoro Timer</h1>
+      <div class="title">
+        <h1>Pomodoro Timer</h1>
+      </div>
         
         <div class="container">
-          <button onclick="setPomodoro()" class="animated-button" style="margin-right: 24px;">
+          <button onclick="setPomodoro()" id="set-pomodoro" class="animated-button btnActive" style="margin-right: 24px;">
             <span class="text">Pomodoro</span>
             <span class="circle"></span>
           </button>
-          <button onclick="setShortBreak()" class="animated-button">
+          <button onclick="setShortBreak()" id="set-short" class="animated-button">
             <span class="text">Short Break</span>
             <span class="circle"></span>
           </button>
-          <button onclick="setLongBreak()" class="animated-button" style="margin-left: 24px;">
+          <button onclick="setLongBreak()" id="set-long" class="animated-button" style="margin-left: 24px;">
             <span class="text">Long Break</span>
             <span class="circle"></span>
           </button>
         </div>
 
-        <div class="container" style="font-size: 60px; font-weight: bold;">Time Left :</div>
+        <div class="container" style="font-size: 60px; font-weight: bold; color: white;">Time Left :</div>
         <div class="time-container">
           <div>
-            <input id="minutes" type="text" value="25">
-            <span style="font-size: 60px; font-weight: bold;">:</span>
-            <input id="seconds" type="text" value="00">
+            <input id="minutes" type="text" value="25" style="color: white;">
+            <span style="font-size: 60px; font-weight: bold; color: white;">:</span>
+            <input id="seconds" type="text" value="00" style="color: white;">
           </div>
         </div>
         
@@ -49,6 +52,9 @@
           </button>
         </div>
     </main>
+    <footer>
+      <div class="title"><h1><span>Made by<i class="fab fa-github"></i><a href="https://github.com/josephtrandev" target="_blank" class="d-1">Joseph Tran</a></span></h1></div>
+    </footer>
 	<script src="js/index.js"></script>
   </body>
 </html>

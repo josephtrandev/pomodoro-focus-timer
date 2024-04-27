@@ -1,4 +1,4 @@
-let mins = 25;
+let mins = .1;
 let secs = mins * 60;
 minutes = document.getElementById("minutes");
 seconds = document.getElementById("seconds");  
@@ -21,8 +21,8 @@ function Decrement() {
             seconds.style.color = "red";
         }
         else {
-            minutes.style.color = "black";
-            seconds.style.color = "black";
+            minutes.style.color = "white";
+            seconds.style.color = "white";
         }
         
         if (mins < 0) {
@@ -74,6 +74,12 @@ function formatTime() {
 
 function setPomodoro() {
     stopCountdown();
+    document.getElementById("set-pomodoro").classList.add("btnActive");
+    document.getElementById("set-short").classList.remove("btnActive");
+    document.getElementById("set-long").classList.remove("btnActive");
+    minutes.style.color = "white";
+    seconds.style.color = "white";
+    
     mins = 25;      // Eventually allow user to set time
     minutes.value = mins;
     secs = mins * 60;
@@ -83,6 +89,12 @@ function setPomodoro() {
 
 function setShortBreak() {
     stopCountdown();
+    document.getElementById("set-short").classList.add("btnActive");
+    document.getElementById("set-pomodoro").classList.remove("btnActive");
+    document.getElementById("set-long").classList.remove("btnActive");
+    minutes.style.color = "white";
+    seconds.style.color = "white";
+
     mins = 5;      // Eventually allow user to set time
     minutes.value = mins;
     secs = mins * 60;
@@ -92,6 +104,12 @@ function setShortBreak() {
 
 function setLongBreak() {
     stopCountdown();
+    document.getElementById("set-long").classList.add("btnActive");
+    document.getElementById("set-short").classList.remove("btnActive");
+    document.getElementById("set-pomodoro").classList.remove("btnActive");
+    minutes.style.color = "white";
+    seconds.style.color = "white";
+
     mins = 30;      // Eventually allow user to set time
     minutes.value = mins;
     secs = mins * 60;
