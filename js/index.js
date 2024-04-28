@@ -1,5 +1,5 @@
 let myTimer;
-let totalTime = 1500; // value in seconds, default of 1500 is 25 minutes
+let totalTime = 1500; // default of 1500 seconds is 25 minutes
 const minutes = document.getElementById("minutes");
 const seconds = document.getElementById("seconds");
 
@@ -18,9 +18,8 @@ function clock() {
 
         function myClock() {
             --totalTime
-            secs = totalTime % 60; // Seconds that cannot be written in minutes
-            let secondsInMinutes = (totalTime - secs) / 60; // Gives the seconds that COULD be given in minutes
-            mins = secondsInMinutes % 60;
+            secs = totalTime % 60;
+            mins = (totalTime - secs) / 60;
 
             minutes.value = mins;
             seconds.value = secs;
@@ -96,7 +95,7 @@ function setPomodoro() {
     minutes.style.color = "white";
     seconds.style.color = "white";
     
-    totalTime = 1500;      // 25 min, Eventually allow user to set time
+    totalTime = 1500;      // 25 min in seconds
     minutes.value = 25;
     seconds.value = 0;
     formatTime();    
@@ -111,7 +110,7 @@ function setShortBreak() {
     minutes.style.color = "white";
     seconds.style.color = "white";
 
-    totalTime = 300;      // 5 min, Eventually allow user to set time
+    totalTime = 300;      // 5 min in seconds
     minutes.value = 5;
     seconds.value = 0;
     formatTime();
@@ -126,7 +125,7 @@ function setLongBreak() {
     minutes.style.color = "white";
     seconds.style.color = "white";
 
-    totalTime = 1800;      // 30 min, Eventually allow user to set time
+    totalTime = 1800;      // 30 min in seconds
     minutes.value = 30;
     seconds.value = 0;
     formatTime();
