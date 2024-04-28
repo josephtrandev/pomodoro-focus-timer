@@ -58,9 +58,18 @@ function startCountdown() {
 
     startButton.classList.add("noHover");
     startButton.style.opacity = 0.5;
-
     stopButton.classList.remove("noHover");
     stopButton.style.opacity = 1;
+
+    pomoButton.classList.add("noHover");
+    pomoButton.style.opacity = 0.5;
+    shortButton.classList.add("noHover");
+    shortButton.style.opacity = 0.5;
+    longButton.classList.add("noHover");
+    longButton.style.opacity = 0.5;
+
+    minutes.classList.add("noHover");
+    seconds.classList.add("noHover");
     
     timerRunning = true;
 }
@@ -70,9 +79,18 @@ function stopCountdown() {
 
     startButton.classList.remove("noHover");
     startButton.style.opacity = 1;
-
     stopButton.classList.add("noHover");
     stopButton.style.opacity = 0.5;
+
+    pomoButton.classList.remove("noHover");
+    pomoButton.style.opacity = 1;
+    shortButton.classList.remove("noHover");
+    shortButton.style.opacity = 1;
+    longButton.classList.remove("noHover");
+    longButton.style.opacity = 1;
+
+    minutes.classList.remove("noHover");
+    seconds.classList.remove("noHover");
 
     timerRunning = false;
 }
